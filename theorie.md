@@ -101,3 +101,18 @@ Stopbits markieren das Ende eines Datenzeichens und dienen dazu, dem Empfänger 
 
 *Paritätsbit* (Parity Bit):
 Das *Paritätsbit* wird manchmal verwendet, um Fehler bei der Übertragung zu erkennen. Es kann gerade, ungerade oder keine Parität sein. Bei gerader Parität wird das Paritätsbit so gesetzt, dass die Anzahl der gesetzten Bits (Einsen) im Datenpaket immer gerade ist. Bei ungerader Parität ist sie immer ungerade. Die Parität ermöglicht eine einfache Fehlererkennung, da ein Fehler die Paritätsbedingung verletzen würde.
+
+
+Diese Begriffe sind Abkürzungen für Steuerleitungen in der seriellen Kommunikation zwischen Geräten. Sie spielen eine wichtige Rolle bei der Steuerung des Datenflusses und der Kommunikation zwischen einem Sender und einem Empfänger. Hier sind die Abkürzungen und ihre Bedeutungen:
+
+RTS - Request to Send (Anforderung zum Senden):
+Dieses Signal wird vom Sender an den Empfänger gesendet, um anzuzeigen, dass der Sender bereit ist, Daten zu senden. Wenn der Empfänger bereit ist, Daten zu empfangen, sendet er ein CTS-Signal (Clear to Send) zurück.
+
+DTR - Data Terminal Ready (Datenendgerät bereit):
+DTR wird vom Sender gesendet, um anzuzeigen, dass das Gerät bereit ist, Daten zu senden oder zu empfangen. Es informiert den Empfänger darüber, dass das Terminal betriebsbereit ist.
+
+CTS - Clear to Send (Bereit zum Senden):
+CTS wird vom Empfänger an den Sender gesendet, um anzuzeigen, dass der Empfänger bereit ist, Daten zu empfangen. Wenn der Sender ein RTS-Signal gesendet hat und ein CTS-Signal vom Empfänger empfängt, kann er mit der Datenübertragung beginnen.
+
+DSR - Data Set Ready (Datensatz bereit):
+DSR wird vom Empfänger an den Sender gesendet, um anzuzeigen, dass das angeschlossene Gerät bereit ist, Daten zu empfangen oder zu senden. Es zeigt dem Sender an, dass das Datenendgerät betriebsbereit ist.
