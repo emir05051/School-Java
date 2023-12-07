@@ -31,16 +31,17 @@ Client/Server-Systeme: Multi-threaded System
 Theorie zu Client/Server-Systemen und Multi-threaded Systemen:
 
 1. Begriffserklärungen:
-Client: Ein Client ist ein Programm oder eine Anwendung, die Dienste oder Ressourcen von einem Server anfordert. Ein Client kann auf einem entfernten oder lokalen Rechner laufen und stellt Anfragen an den Server.
-Server: Ein Server ist ein Programm oder eine Maschine, die Dienste oder Ressourcen bereitstellt und auf Anfragen von Clients antwortet. Der Server verarbeitet Anfragen und stellt die angeforderten Informationen oder Dienste bereit.
-Socket: Ein Socket ist eine Endpunkt-Instanz in einem Computernetzwerk, die für die Kommunikation zwischen einem Client und einem Server verwendet wird. Sockets ermöglichen die Datenübertragung zwischen verschiedenen Geräten über ein Netzwerk.
-Port: Ein Port ist eine Nummer, die einer bestimmten Anwendung auf einem Rechner zugeordnet ist. Ports dienen dazu, eingehende Datenpakete der richtigen Anwendung oder Dienstleistung zuzuweisen.
-Host: Ein Host ist ein Rechner oder ein Gerät, das mit einem Netzwerk verbunden ist und Dienste bereitstellen kann. Hosts können Clients oder Server sein, abhängig von ihrer Funktion in einem bestimmten Kontext.
+*Client*: Ein Client ist ein Programm oder eine Anwendung, die Dienste oder Ressourcen von einem Server anfordert. Ein Client kann auf einem entfernten oder lokalen Rechner laufen und stellt Anfragen an den Server.
+*Server*: Ein Server ist ein Programm oder eine Maschine, die Dienste oder Ressourcen bereitstellt und auf Anfragen von Clients antwortet. Der Server verarbeitet Anfragen und stellt die angeforderten Informationen oder Dienste bereit.
+*Socket*: Ein Socket ist eine Endpunkt-Instanz in einem Computernetzwerk, die für die Kommunikation zwischen einem Client und einem Server verwendet wird. Sockets ermöglichen die Datenübertragung zwischen verschiedenen Geräten über ein Netzwerk.
+*Port*: Ein Port ist eine Nummer, die einer bestimmten Anwendung auf einem Rechner zugeordnet ist. Ports dienen dazu, eingehende Datenpakete der richtigen Anwendung oder Dienstleistung zuzuweisen.
+*Host*: Ein Host ist ein Rechner oder ein Gerät, das mit einem Netzwerk verbunden ist und Dienste bereitstellen kann. Hosts können Clients oder Server sein, abhängig von ihrer Funktion in einem bestimmten Kontext.
+*Dienste*: Dienste sind spezifische Funktionen oder Ressourcen, die ein Server für Clients bereitstellt. Diese können vielfältig sein, von einfachen Datenübertragungen (wie HTTP für Webseiten) bis hin zu komplexen Diensten wie Datenbankzugriff, E-Mail oder Dateifreigabe
 
-2. Multi-threaded System:
+3. Multi-threaded System:
 Ein Multi-threaded System ist ein System, das die Verwendung von mehreren Threads innerhalb eines Prozesses ermöglicht. In einem Client/Server-System bedeutet dies, dass der Server mehrere Threads gleichzeitig ausführen kann, um gleichzeitige Anfragen von verschiedenen Clients zu bearbeiten. Das verbessert die Leistung und Skalierbarkeit des Systems.
 
-3. Umwandlung eines Single-threaded Systems in ein Multi-threaded System:
+4. Umwandlung eines Single-threaded Systems in ein Multi-threaded System:
 Die Umwandlung eines Single-threaded Systems in ein Multi-threaded System erfordert sorgfältige Planung und Implementierung. Hier sind einige Schritte, um dies zu erreichen:
 Identifizierung von Aufgaben: Analysieren Sie das System, um Aufgaben zu identifizieren, die parallel ausgeführt werden können. Dies können separate Anfragen von verschiedenen Clients oder verschiedene Verarbeitungsschritte sein.
 Thread-Implementierung: Erstellen Sie für jede identifizierte parallel ausführbare Aufgabe einen eigenen Thread. Dies kann durch die Verwendung von Thread-Bibliotheken oder APIs erfolgen, die von der Programmiersprache oder Plattform unterstützt werden.
@@ -80,3 +81,23 @@ Protokollanalyse: Implementieren Sie Mechanismen zur Analyse der empfangenen Dat
 Fehlerbehandlung: Implementieren Sie Mechanismen zur Fehlererkennung und -behebung, um sicherzustellen, dass falsch übertragene Daten erkannt und korrigiert werden können.
 
 
+Weitere Fragen: 
+- Was ist eine serielle Schnittstelle
+- Was sind Baudrate, Port, dataBits, stopBits, paritat
+
+1. Eine serielle Schnittstelle ist eine Methode zur Datenübertragung zwischen Computern und anderen elektronischen Geräten. Im Gegensatz zu parallelen Schnittstellen, bei denen mehrere Datenleitungen gleichzeitig verwendet werden, erfolgt die Übertragung bei einer seriellen Schnittstelle bitweise nacheinander über eine einzige Datenleitung. Dies ermöglicht eine einfachere Verbindung und ist besonders nützlich für die Kommunikation über längere Distanzen.
+2.
+*Baudrate*:
+Die Baudrate gibt an, wie viele Signalwechsel pro Sekunde übertragen werden. Sie wird in Baud gemessen. Ein Baud entspricht einem Signalwechsel pro Sekunde. Eine höhere Baudrate bedeutet eine schnellere Datenübertragung. Es ist wichtig, dass die Baudrate auf beiden Seiten der Kommunikation (Sender und Empfänger) übereinstimmt.
+
+*Port*:
+Ein Port ist die physische oder virtuelle Schnittstelle, die für den Datenaustausch zwischen einem Computer und einem externen Gerät verwendet wird. Beispielsweise können COM-Ports für RS-232 oder RS-485 Kommunikation verwendet werden, und USB-Ports können für USB-Kommunikation genutzt werden.
+
+*Datenbits* (Data Bits):
+Datenbits geben an, wie viele Bits für die Übertragung eines einzelnen Datenzeichens verwendet werden. Dies kann beispielsweise 7 oder 8 Bits betragen. Die Anzahl der Datenbits bestimmt die möglichen Werte, die übertragen werden können.
+
+*Stopbits*:
+Stopbits markieren das Ende eines Datenzeichens und dienen dazu, dem Empfänger Zeit zu geben, sich auf das nächste Zeichen vorzubereiten. Häufig werden 1 oder 2 Stopbits verwendet. Die genaue Anzahl wird zwischen Sender und Empfänger vereinbart.
+
+*Paritätsbit* (Parity Bit):
+Das *Paritätsbit* wird manchmal verwendet, um Fehler bei der Übertragung zu erkennen. Es kann gerade, ungerade oder keine Parität sein. Bei gerader Parität wird das Paritätsbit so gesetzt, dass die Anzahl der gesetzten Bits (Einsen) im Datenpaket immer gerade ist. Bei ungerader Parität ist sie immer ungerade. Die Parität ermöglicht eine einfache Fehlererkennung, da ein Fehler die Paritätsbedingung verletzen würde.
